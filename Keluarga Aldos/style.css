@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #6c5ce7;
+    --secondary: #00cec9;
+    --dark: #0f1225;
+    --light: #ffffff;
+    --glass: rgba(255,255,255,0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f1225, #1b1f3b);
+    color: #ecf0f1;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 14, 40, 0.75);
+    backdrop-filter: blur(14px);
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* Judul Header */
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+/* NAV DI TENGAH */
+nav {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #00cec9;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a.active {
+    color: #00f2fe;
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+
+/* ===== CONTAINER (GLASS CARD) ===== */
+.container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 35px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: var(--secondary);
+}
+
+/* ===== FAMILY TREE ===== */
+.family-tree {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #6c5ce7, #00cec9);
+    color: white;
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card small {
+    display: block;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== ACTIVITY SECTION ===== */
+.activity {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    align-items: center;
+}
+
+.activity img {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transition: transform 0.5s;
+}
+
+.activity img:hover {
+    transform: scale(1.05);
+}
+
+.activity p {
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact a {
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #6c5ce7, #00cec9);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+    transition: all 0.4s;
+}
+
+.contact a:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+}
+
+/* ====== PRO HEADER ULTIMATE ====== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(12, 16, 45, 0.75);
+    backdrop-filter: blur(16px);
+    padding: 26px 20px;
+    text-align: center;
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+header.shrink {
+    padding: 14px 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* NAV */
+nav {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+}
+
+nav a {
+    color: #eaeaf0;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #00f2fe;
+    transition: width .3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a.active {
+    color: #00f2fe;
+}
+
+/* ====== HAMBURGER ====== */
+.menu-toggle {
+    display: none;
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ====== DARK MODE TOGGLE ====== */
+.theme-toggle {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* ====== DARK MODE ====== */
+body.dark {
+    background: linear-gradient(135deg, #050814, #0b0f2a);
+    color: #eaeaf0;
+}
+
+body.dark .container {
+    background: rgba(255,255,255,0.08);
+}
+
+/* ====== MOBILE ====== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 18px;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+}
